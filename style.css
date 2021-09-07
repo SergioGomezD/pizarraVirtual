@@ -1,0 +1,30 @@
+.draggable {
+  width: 20px;
+  height: 5px;
+  margin: 1rem 0 0 1rem;
+  background-image: url(0.png);
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
+}
+
+canvas {
+  width: 500px;
+  height: 500px;
+  background-color: #0D0909;
+}
+
+
+.rainbow-pixel-canvas {
+  box-sizing: border-box;
+  background: black;
+  user-select: none;
+  touch-action: none;
+}
+p {
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.25rem;
+}
