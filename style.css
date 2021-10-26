@@ -1,76 +1,15 @@
-#drop_zone {
-  border: 5px solid blue;
-  width:  200px;
-  height: 100px;
-}
 
-#drag-1, #drag-2 {
-  width: 25%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  touch-action: none;
-  user-select: none;
-  transform: translate(0px, 0px);
-}
 
 .hidden {
   display: none;
 }
 
 .pizarra{
-  background-image: url('assets/fondos/17010.jpg');
- 
-   width:2500px; /* or whatever width you want. */
-   max-width:2500px; /* or whatever width you want. */
-   height: 600px;
-   display: inline-block;
-
+  background-image: url('assets/botones\ y\ cotes\ restantes/pizarra_3.png');
+  background-size: contain;
+  width:1500px;
+  height: 570px;
+  display: inline-block;
+  background-repeat: no-repeat;
 }
 
-.draggable-1 {
-  width: 15%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  touch-action: none;
-  user-select: none;
-}
-.draggable-4 {
-  width: 15%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  touch-action: none;
-  user-select: none;
-}
-.draggable-3 {
-  width: 15%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  touch-action: none;
-  user-select: none;
-}
-.draggable-2 {
-  width: 15%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  touch-action: none;
-  user-select: none;
-}
