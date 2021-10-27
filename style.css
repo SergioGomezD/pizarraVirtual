@@ -12,4 +12,7 @@
   display: inline-block;
   background-repeat: no-repeat;
 }
+.img-fluid:hover{
+  src: url('./assets/botones y cotes restantes/bot_elegir_sobre.png');
+}
 
