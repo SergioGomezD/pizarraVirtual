@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="style.css">
   <title>pizarra</title>
 </head>
-<body>
+<body onload="cargarItems()">
+
+<script src="articulos.js"></script>
   <img src="./assets/botones y cotes restantes/bot_cambiar_lugar.png" alt="">
   Ahora con los juegos que selecionaste, Construye tu museo <br>
   <div class="pizarra" id="pizarra">
@@ -24,21 +26,21 @@
         <br>
         <br>
         <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_1.png" class="draggable-1" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" class="draggable-2" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" class="draggable-3" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" class="draggable-4" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" class="draggable-5" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_6.png" class="draggable-6" width="50px" height="50px">  <br>
+        <img id="item1_1" class="draggable-1" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" id="item1_2" class="draggable-2" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" id="item1_3" class="draggable-3" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" id="item2_1" class="draggable-4" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" id="item2_2" class="draggable-5" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_6.png" id="item2_3" class="draggable-6" width="50px" height="50px">  <br>
       </div>
       <div class="col-1">
         <br><br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_1.png" class="draggable-7" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" class="draggable-8" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" class="draggable-9" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" class="draggable-10" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" class="draggable-11" width="50px" height="50px"><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_6.png"" class="draggable-12" width="50px" height="50px"><br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_1.png" id="item3_1" class="draggable-7" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" id="item3_2" class="draggable-8" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" id="item3_3" class="draggable-9" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" id="item4_1" class="draggable-10" width="50px" height="50px">  <br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" id="item4_2" class="draggable-11" width="50px" height="50px"><br>
+        <img src="./assets/botones y cotes restantes/roja_simbol_6.png"" id="item4_3" class="draggable-12" width="50px" height="50px"><br>
       </div>
       <div class="col-2">
         <br>
@@ -84,6 +86,5 @@
   <div id="contenedorCanvas" style="border: 1px solid red; display: none;">
   </div>
 <script src="pizarra.js"></script>
-<script src="articulos.js"></script>
 </body>
 </html>
