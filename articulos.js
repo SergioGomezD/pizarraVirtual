@@ -4,14 +4,22 @@ var paso2='./paso2.html'
 var pizarra='./pizarra.html'
 
 
-function añadirArticulo(){
+function añadirArticulo(rojo_id){
+    if(total==0){
+        
+    }
     total1++;
     validarTotal();
-    console.log(total1);
 }
 
 function validarTotal(){
+    if(total1==1){
+        
+    document.getElementById('cont_roja').src='./assets/roja-1.png';
+    }
     if (total1==2){
+        
+    document.getElementById('cont_roja').src='./assets/roja-2.png';
         document.location.href=paso2;
     }
 }
@@ -23,12 +31,15 @@ function añadirArticulo2(){
 }
 
 function validarTotal2(){
+    if(total2==1){
+        document.getElementById('cont_negro').src='./assets/negra-1.png';
+    }
     if (total2==2){
-        document.location.href=pizarra;
+        
+    document.getElementById('cont_negro').src='./assets/negra-2.png';
+        document.location.href=paso2;
     }
 }
-
-
 
 
 const $boton = document.querySelector("#ss"), 
