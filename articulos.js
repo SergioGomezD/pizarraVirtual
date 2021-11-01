@@ -7,16 +7,21 @@ var img1='';
 var img2='';
 var img3='';
 var img4='';
-
+var imgs=[];
 
 
 function añadirArticulo(id_img){
+    
     if(total1==0){
-        localStorage.setItem(img1, id_img);
+        imgs.push(id_img);
+        localStorage.setItem('myArray', JSON.stringify(imgs));
+        
         total1++;
     }
     else {
-        localStorage.setItem(img2, id_img);
+        //localStorage.setItem(img2, id_img);
+        imgs.push(id_img);
+        localStorage.setItem('myArray', JSON.stringify(imgs));
         total1++;
     }
 
@@ -31,18 +36,25 @@ function validarTotal(){
     if (total1==2){
         
         document.getElementById('cont_roja').src='./assets/roja-2.png';
+        
         document.location.href=paso2;
     }
 }
 
 function añadirArticulo2(id_img){
-    
+    console.log(total1)
     if(total2==0){
-        localStorage.setItem(img3, id_img);
+        var array = localStorage.getItem('myArray');
+        array = JSON.parse(array);
+        imgs.push(array[0]);
+        imgs.push(array[1]);
+        imgs.push(id_img);
+        localStorage.setItem('myArray', JSON.stringify(imgs));        
         total2++;
     }
     else {
-        localStorage.setItem(img4, id_img);
+        imgs.push(id_img);
+        localStorage.setItem('myArray', JSON.stringify(imgs));        
         total2++;
     }
 
@@ -61,27 +73,30 @@ function validarTotal2(){
 }
 
 function guardarItem(){
-        img1_1ruta= './assets/'+localStorage.getItem(img1)+'.png';
-        img1_2ruta= './assets/'+localStorage.getItem(img1)+'.png';
-        img1_3ruta= './assets/'+localStorage.getItem(img1)+'.png';
+        var array = localStorage.getItem('myArray');
+        array = JSON.parse(array);
+        img1_1ruta= './assets/'+array[0]+'.png';
+        img1_2ruta= './assets/'+array[0]+'.png';
+        img1_3ruta= './assets/'+array[0]+'.png';
             
-        img2_1ruta= './assets/'+localStorage.getItem(img2)+'.png';
-        img2_2ruta= './assets/'+localStorage.getItem(img2)+'.png';
-        img2_3ruta= './assets/'+localStorage.getItem(img2)+'.png';
+        img2_1ruta= './assets/'+array[1]+'.png';
+        img2_2ruta= './assets/'+array[1]+'.png';
+        img2_3ruta= './assets/'+array[1]+'.png';
 
-        img3_1ruta= './assets/'+localStorage.getItem(img3)+'.png';
-        img3_2ruta= './assets/'+localStorage.getItem(img3)+'.png';
-        img3_3ruta= './assets/'+localStorage.getItem(img3)+'.png';
+        img3_1ruta= './assets/'+array[2]+'.png';
+        img3_2ruta= './assets/'+array[2]+'.png';
+        img3_3ruta= './assets/'+array[2]+'.png';
     
-        img4_1ruta= './assets/'+localStorage.getItem(img4)+'.png';
-        img4_2ruta= './assets/'+localStorage.getItem(img4)+'.png';
-        img4_3ruta= './assets/'+localStorage.getItem(img4)+'.png';
+        img4_1ruta= './assets/'+array[3]+'.png';
+        img4_2ruta= './assets/'+array[3]+'.png';
+        img4_3ruta= './assets/'+array[3]+'.png';
 }
 
 
 
 function cargarItems(){
     guardarItem();
+    
     img1=document.getElementById('item1_1');
     img1.src=img1_1ruta;
     img2=document.getElementById('item1_2');
