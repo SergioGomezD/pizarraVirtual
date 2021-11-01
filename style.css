@@ -5,7 +5,7 @@
 }
 
 .pizarra{
-  background-image: url('assets/botones\ y\ cotes\ restantes/pizarra_3.png');
+  background-image: url('./assets/fondos/entorno5.png');
   background-size: contain;
   width:1500px;
   height: 570px;
