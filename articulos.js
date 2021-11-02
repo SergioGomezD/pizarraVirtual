@@ -156,20 +156,116 @@ function cambiarFondo(){
         totalimg=0;
     }
 }
+function tomarSS(){
 
-const $boton = document.querySelector("#ss"), 
-  $objetivo = document.querySelector("#pizarra"), 
-  $contenedorCanvas = document.querySelector("#contenedorCanvas"); 
+}
 
 
-function tomarSS() {
-  html2canvas($objetivo)
-    .then(canvas => {
-      
-        $contenedorCanvas.appendChild(canvas); 
-        var img = canvas.toDataURL("image/png");
-        window.open(img);
-    });
 
+function cambiarTamaño(idimg){
+    imgTam=document.getElementById(idimg);
+    imgTam.onwheel=zoom;
+
+
+    console.log('moviendose');
+}
+function zoom(event){
+    width=imgTam.width;
+    height=imgTam.height;
     
-};
+    if (event.deltaY < 0) {
+        width=width+10;
+        height=height+10
+        imgTam.setAttribute("width",width+'px');
+        imgTam.setAttribute("heigth",height+'px');
+      }
+      else {
+        width=width-10;
+        height=height-10;
+        imgTam.setAttribute("width",width+'px');
+        imgTam.setAttribute("heigth",height+'px');
+      }
+}
+
+
+
+function dibujar(){
+    var pixelSize = 16
+
+interact('.rainbow-pixel-canvas')
+  .draggable({
+    max: Infinity,
+    maxPerElement: Infinity,
+    origin: 'self',
+    modifiers: [
+      interact.modifiers.snap({
+        // snap to the corners of a grid
+        targets: [
+          interact.snappers.grid({ x: pixelSize, y: pixelSize })
+        ]
+      })
+    ],
+    listeners: {
+      // draw colored squares on move
+      move: function (event) {
+        var context = event.target.getContext('2d')
+        // calculate the angle of the drag direction
+        var dragAngle = 180 * Math.atan2(event.dx, event.dy) / Math.PI
+
+        // set color based on drag angle and speed
+        context.fillStyle =
+          'hsl(' +
+          dragAngle +
+          ', 86%, ' +
+          (30 + Math.min(event.speed / 1000, 1) * 50) +
+          '%)'
+
+        // draw squares
+        context.fillRect(
+          event.pageX - pixelSize / 2,
+          event.pageY - pixelSize / 2,
+          pixelSize,
+          pixelSize
+        )
+      }
+    }
+  })
+  // clear the canvas on doubletap
+  .on('doubletap', function (event) {
+    var context = event.target.getContext('2d')
+
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height)
+    resizeCanvases()
+  })
+
+function resizeCanvases () {
+  [].forEach.call(document.querySelectorAll('.rainbow-pixel-canvas'), function (
+    canvas
+  ) {
+    delete canvas.width
+    delete canvas.height
+
+    var rect = canvas.getBoundingClientRect()
+
+    canvas.width = rect.width
+    canvas.height = rect.height
+  })
+}
+
+resizeCanvases()
+
+// interact.js can also add DOM event listeners
+interact(window).on('resize', resizeCanvases)
+}
+
+
+function descargar(){
+    const canvas = document.querySelector("#miCanvas");
+    let enlace = document.createElement('a');
+      // El título
+      enlace.download = "Canvas como imagen.png";
+      // Convertir la imagen a Base64 y ponerlo en el enlace
+      enlace.href = canvas.toDataURL();
+      // Hacer click en él
+      enlace.click();
+}

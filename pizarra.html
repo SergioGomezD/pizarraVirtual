@@ -10,51 +10,60 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+  <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  
   <link rel="stylesheet" href="style.css">
   <title>pizarra</title>
 </head>
 <body onload="cargarItems()">
 
 <script src="articulos.js"></script>
+<div class="ssdiv" >
   <img src="./assets/fondos/bot_prev.png" alt="" onclick="cambiarFondo()">
   <img src="./assets/fondos/en4.png" alt="" id="fondomin">
   <img src="./assets/fondos/bot_next.png" alt="" onclick="cambiarFondo()">
   Ahora con los juegos que selecionaste, Construye tu museo <br>
-  <div class="pizarra" id="pizarra">
+  <img src="./assets/botones y cotes restantes/bot_pizzara_lapiz.png" alt="" width="30px" height="30px" onclick="dibujar()">
+    <img src="./assets/botones y cotes restantes/bot_pizzara_borrador.png" alt="" width="30px" height="30px" onclick="dibujar()">
+  <div class="pizarra " id="pizarra">
+    
+    
+
     <div class="row container">
       
       <div class="col-1">
         <br><br><br><br><br>
-        <img src="" id="item1_1" class="draggable-1" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" id="item1_2" class="draggable-2" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" id="item1_3" class="draggable-3" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" id="item2_1" class="draggable-4" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" id="item2_2" class="draggable-5" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_6.png" id="item2_3" class="draggable-6" width="50px" height="50px">  
+        <img id="item1_1" class="draggable-1" width="50px"  onwheel="cambiarTamaño(this.id)" height="50px">  <br><br>
+        <img id="item1_2" class="draggable-2" width="50px" height="50px" onwheel="cambiarTamaño(this.id)">  <br>
+        <img id="item1_3" class="draggable-3" width="50px" height="50px" onwheel="cambiarTamaño(this.id)">  <br><br>
+        <img id="item2_1" class="draggable-4" width="50px" height="50px" onwheel="cambiarTamaño(this.id)">  <br><br>
+        <img id="item2_2" class="draggable-5" width="50px" height="50px" onwheel="cambiarTamaño(this.id)">  <br><br>
+        <img id="item2_3" class="draggable-6" width="50px" height="50px" onwheel="cambiarTamaño(this.id)">  
       </div>
       <div class="col-1">
         <br><br><br><br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_1.png" id="item3_1" class="draggable-7" width="50px" height="50px"> <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_2.png" id="item3_2" class="draggable-8" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_3.png" id="item3_3" class="draggable-9" width="50px" height="50px">  <br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_4.png" id="item4_1" class="draggable-10" width="50px" height="50px">  <br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_5.png" id="item4_2" class="draggable-11" width="50px" height="50px"><br><br>
-        <img src="./assets/botones y cotes restantes/roja_simbol_6.png"" id="item4_3" class="draggable-12" width="50px" height="50px">
+        <img id="item3_1" class="draggable-7" width="75px" onwheel="cambiarTamaño(this.id)"> <br><br>
+        <img id="item3_2" class="draggable-8" width="75px" onwheel="cambiarTamaño(this.id)">  <br><br>
+        <img id="item3_3" class="draggable-9" width="75px" onwheel="cambiarTamaño(this.id)">  <br><br><br>
+        <img id="item4_1" class="draggable-10" width="75px" onwheel="cambiarTamaño(this.id)">  <br><br>
+        <img id="item4_2" class="draggable-11" width="75px" onwheel="cambiarTamaño(this.id)"><br><br>
+        <img id="item4_3" class="draggable-12" width="75px" onwheel="cambiarTamaño(this.id)">
       </div>
-      <div class="col-2">
+      <div class="col-1">
         <br>
         <br>
-        <img src="./assets/botones y cotes restantes/bot_pizzara_lapiz.png" alt="" width="30px" height="30px">
-        <img src="./assets/botones y cotes restantes/bot_pizzara_borrador.png" alt="" width="30px" height="30px">
-        <img src="./assets/botones y cotes restantes/bot_pizzara_pintura.png" alt="" width="30px" height="30px">
+        <canvas class="rainbow-pixel-canvas" id="miCanvas" height="525px" width="870px" ></canvas>
+        <!--
+        <img src="./assets/botones y cotes restantes/bot_pizzara_pintura.png" alt="" width="30px" height="30px" onclick="dibujarFondo()">
         <img src="./assets/botones y cotes restantes/bot_pizzara_zoom_in.png" alt="" width="30px" height="30px">
-        <img src="./assets/botones y cotes restantes/bot_pizzara_zoom_out.png" alt="" width="30px" height="30px">
+        <img src="./assets/botones y cotes restantes/bot_pizzara_zoom_out.png" alt="" width="30px" height="30px">-->
 
       </div>
-      <div class="col-2">
+      <div class="col-3">
         
       </div>
+      
       <div class="col-6">
         <br>
         <br>
@@ -67,25 +76,27 @@
         <br>
         <br>
         <br>
+        <br><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
         <br>
         <br>
         
+        
         <br>
         <br>
-        <br>
-        <br>
-        <img src="./assets/botones y cotes restantes/bot_pizarra_descargar.png" alt="" width="20%" id="ss" onclick="tomarSS()" >
+        <img src="./assets/botones y cotes restantes/bot_pizarra_descargar.png" alt="" width="20%" id="ss" onclick="descargar()" >
         <img src="./assets/botones y cotes restantes/bot_pizzara_enviar.png" alt="" width="20%">
       </div>
     </div>
   </div>
-
-
-  <div id="contenedorCanvas" style="border: 1px solid red; display: none;">
-  </div>
+</div>
 <script src="pizarra.js"></script>
 </body>
 </html>
