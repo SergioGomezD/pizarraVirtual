@@ -190,7 +190,7 @@ function zoom(event){
 
 
 function dibujar(){
-    var pixelSize = 16
+    var pixelSize = 5
 
 interact('.rainbow-pixel-canvas')
   .draggable({
