@@ -16,3 +16,11 @@
   src: url('./assets/botones y cotes restantes/bot_elegir_sobre.png');
 }
 
+div .column1 {
+  transform: translate(17px, 1px);
+  transform: translate(21px, 2px);
+}
+
+div .column2 {
+  transform: translate(-24px, 8px);
+}

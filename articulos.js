@@ -190,7 +190,7 @@ function zoom(event){
 
 
 function dibujar(){
-    var pixelSize = 5
+    var pixelSize = 5 //tamaño pixel
 
 interact('.rainbow-pixel-canvas')
   .draggable({
@@ -216,8 +216,7 @@ interact('.rainbow-pixel-canvas')
         context.fillStyle =
           'hsl(' +
           dragAngle +
-          ', 86%, ' +
-          (30 + Math.min(event.speed / 1000, 1) * 50) +
+          ', 86%, ' +'45'+ //color!
           '%)'
 
         // draw squares
