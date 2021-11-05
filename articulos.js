@@ -259,12 +259,14 @@ interact(window).on('resize', resizeCanvases)
 
 
 function descargar(){
-    const canvas = document.querySelector("#miCanvas");
+    /*const canvas = document.querySelector("#miCanvas");
     let enlace = document.createElement('a');
       // El título
       enlace.download = "Canvas como imagen.png";
       // Convertir la imagen a Base64 y ponerlo en el enlace
       enlace.href = canvas.toDataURL();
       // Hacer click en él
-      enlace.click();
+      enlace.click();*/
+      enlace= 'https://chrome.google.com/webstore/detail/lightshot-screenshot-tool/mbniclmhobmnbdlbpiphghaielnnpgdp?hl=es'
+      window.open(enlace)
 }
