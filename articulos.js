@@ -75,21 +75,21 @@ function validarTotal2(){
 function guardarItem(){
         var array = localStorage.getItem('myArray');
         array = JSON.parse(array);
-        img1_1ruta= './assets/'+array[0]+'.png';
-        img1_2ruta= './assets/'+array[0]+'.png';
-        img1_3ruta= './assets/'+array[0]+'.png';
+        img1_1ruta= './assets/item/'+array[0]+'.png';
+        img1_2ruta= './assets/item/'+array[0]+'_f.png';
+        img1_3ruta= './assets/item/'+array[0]+'_c.png';
             
-        img2_1ruta= './assets/'+array[1]+'.png';
-        img2_2ruta= './assets/'+array[1]+'.png';
-        img2_3ruta= './assets/'+array[1]+'.png';
+        img2_1ruta= './assets/item/'+array[1]+'.png';
+        img2_2ruta= './assets/item/'+array[1]+'_f.png';
+        img2_3ruta= './assets/item/'+array[1]+'_c.png';
 
-        img3_1ruta= './assets/'+array[2]+'.png';
-        img3_2ruta= './assets/'+array[2]+'.png';
-        img3_3ruta= './assets/'+array[2]+'.png';
+        img3_1ruta= './assets/item/'+array[2]+'.png';
+        img3_2ruta= './assets/item/'+array[2]+'_f.png';
+        img3_3ruta= './assets/item/'+array[2]+'_c.png';
     
-        img4_1ruta= './assets/'+array[3]+'.png';
-        img4_2ruta= './assets/'+array[3]+'.png';
-        img4_3ruta= './assets/'+array[3]+'.png';
+        img4_1ruta= './assets/item/'+array[3]+'.png';
+        img4_2ruta= './assets/item/'+array[3]+'_f.png';
+        img4_3ruta= './assets/item/'+array[3]+'_c.png';
 }
 
 
@@ -153,8 +153,23 @@ function cambiarFondo(){
     else if(totalimg==4){
         fondo.setAttribute("style", "background-image:url('./assets/fondos/entorno5.png')")  ;
         fondomin.src='./assets/fondos/en4.png';
-        totalimg=0;
+        totalimg++;
     }
+    else if(totalimg==5){
+      fondo.setAttribute("style", "background-image:url('./assets/fondos/entorno6.png')")  ;
+      fondomin.src='./assets/fondos/en6.png';
+      totalimg++;
+  }
+  else if(totalimg==6){
+    fondo.setAttribute("style", "background-image:url('./assets/fondos/entorno7.png')")  ;
+    fondomin.src='./assets/fondos/en7.png';
+    totalimg++;
+  }
+  else if(totalimg==7){
+    fondo.setAttribute("style", "background-image:url('./assets/fondos/entorno8.png')")  ;
+    fondomin.src='./assets/fondos/en8.png';
+    totalimg=0;
+  }
 }
 function tomarSS(){
 
@@ -269,4 +284,9 @@ function descargar(){
       enlace.click();*/
       enlace= 'https://chrome.google.com/webstore/detail/lightshot-screenshot-tool/mbniclmhobmnbdlbpiphghaielnnpgdp?hl=es'
       window.open(enlace)
+}
+
+
+function todo(){
+  
 }
