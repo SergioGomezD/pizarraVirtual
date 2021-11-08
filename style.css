@@ -15,6 +15,12 @@
 .img-fluid:hover{
   src: url('./assets/botones y cotes restantes/bot_elegir_sobre.png');
 }
+.column1 img{
+  position: fixed;
+}
+.column2 img{
+  position: fixed;
+}
 
 div .column1 {transform: translate(14px, 6px);
 }
@@ -34,3 +40,52 @@ div .draggable-8,.draggable-9 {
 .draggable-5, .draggable-6{
   transform: translate(8px, 6px);
 }
+
+.draggable-1{
+  transform: translate(-5px, 16px); cursor: move; 
+}
+
+.draggable-2{
+  transform: translate(7px, -11px);
+}
+
+.draggable-8{
+  transform: translate(26px, -14px);
+}
+
+.maletaroja{
+  display:block;
+margin:auto;
+}
+/*
+
+.draggable-1{
+  position: absolute; transform: translate(13.3333px, 25.5556px);
+}
+.draggable-2{
+  transform: translate(18.8889px, 0px);
+}
+.draggable-3{
+  transform: translate(12.2222px, -32.2222px);
+}
+.draggable-4{
+  transform: translate(11.1111px, -47.7778px);
+}
+.draggable-5{
+  transform: translate(20px, -44.4445px);
+}
+.draggable-6{
+  transform: translate(20px, -73.3334px);
+}
+.draggable-7{
+  transform: translate(-27.7778px, 3.33334px);
+}
+.draggable-8{
+  transform: translate(-11.1111px, -22.2222px);
+}
+.draggable-9{
+  transform: translate(-12.2222px, -50px);
+}
+.draggable-10{
+  transform: translate(-26.6667px, -46.6667px);
+}*/
