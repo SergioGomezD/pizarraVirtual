@@ -200,28 +200,26 @@ resizeCanvases()
 interact(window).on('resize', resizeCanvases)
 }
 
-
 function descargar(){
-/*const canvas = document.querySelector("#miCanvas");
-let enlace = document.createElement('a');
-  // El título
-  enlace.download = "Canvas como imagen.png";
-  // Convertir la imagen a Base64 y ponerlo en el enlace
-  enlace.href = canvas.toDataURL();
-  // Hacer click en él
-  enlace.click();*/
-  enlace= 'https://chrome.google.com/webstore/detail/lightshot-screenshot-tool/mbniclmhobmnbdlbpiphghaielnnpgdp?hl=es'
-  window.open(enlace)
-}
-
-
-function todo(){
+  document.getElementById('down').click;
+      $('#down').trigger('click');
+      console.log('aaaa')
+  }
   
-  const screenshotTarget = document.body;
-
-html2canvas(screenshotTarget).then((canvas) => {
-    const base64image = canvas.toDataURL("image/png");
-    window.location.href = base64image;
-    window.open=base64image;
-});
-}
+  
+  function todo(){
+    
+    const screenshotTarget = document.body;
+  
+  html2canvas(screenshotTarget).then((canvas) => {
+      var evt = document.createEvent("MouseEvents");
+      const base64image = canvas.toDataURL("image/png");
+      //window.location.href = base64image;
+      window.open=base64image; 
+      document.getElementById('down').setAttribute('href',base64image);
+      evt.initMouseEvent("click", true, true, window,
+      0, 0, 0, 0, 0, false, false, false, false, 0, null);
+      document.getElementById('down').dispatchEvent(evt);      
+  });
+  
+  }
